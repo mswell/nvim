@@ -1,0 +1,7 @@
+require("wellpunk.plugins-setup")
+require("wellpunk.core.options")
+require("wellpunk.core.keymaps")
+require("wellpunk.core.colorscheme")
+require("wellpunk.plugins.comment")
+require("wellpunk.plugins.nvim-tree")
+require("wellpunk.plugins.lualine")
