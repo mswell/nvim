@@ -22,6 +22,7 @@ treesitter.setup({
 		"python",
 		"tsx",
 		"yaml",
+		"go",
 		"html",
 		"css",
 		"markdown",
