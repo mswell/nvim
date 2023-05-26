@@ -16,6 +16,7 @@ opt.wrap = false
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true
+opt.incsearch = true
 
 -- cursor line
 opt.cursorline = true
@@ -39,3 +40,15 @@ opt.iskeyword:append("-")
 
 -- colorscheme theme
 vim.g.nightflyTransparent = true
+opt.colorcolumn = "80"
+
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+opt.updatetime = 50
+
+-- scroll options
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
