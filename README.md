@@ -4,11 +4,17 @@
     <img src="assets/nvim.png" alt="print do meu nvim" style="max-width:100%;">
 </p>
 
+## Install Neovim
+
+```bash
+wget -q -O - --no-check-certificate https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release | bash
+```
+
 ## How to use
 
 ### Clone this repo
 
-```
+```bash
 git clone https://github.com/mswell/nvim.git ~/.config/nvim
 ```
 
