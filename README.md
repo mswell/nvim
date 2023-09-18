@@ -1,5 +1,9 @@
 # My neovim config file
 
+<p align="center">
+    <img src="assets/nvim.png" alt="print do meu nvim" style="max-width:100%;">
+</p>
+
 ## How to use
 
 ### Clone this repo
