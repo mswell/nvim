@@ -40,3 +40,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- Nightfly background transparence
+vim.g.nightflyTransparent = true
