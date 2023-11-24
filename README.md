@@ -8,6 +8,8 @@ My nvim config using lazyvim as base :)
 
 See more about the amazing project [LazyVim](https://www.lazyvim.org/)
 
+Amazing tutorial About [Lazyvim](https://www.youtube.com/watch?v=N93cTbtLCIM)
+
 ## Install Neovim
 
 ```bash
