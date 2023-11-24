@@ -4,6 +4,10 @@
     <img src="assets/nvim.png" alt="print do meu nvim" style="max-width:100%;">
 </p>
 
+My nvim config using lazyvim as base :)
+
+See more about the amazing project [LazyVim](https://www.lazyvim.org/)
+
 ## Install Neovim
 
 ```bash
