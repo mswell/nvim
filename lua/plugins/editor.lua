@@ -192,7 +192,6 @@ return {
       }
     end,
   },
-
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
@@ -220,6 +219,13 @@ return {
       return {}
     end,
   },
+
+  {
+    "echasnovski/mini.hipatterns",
+    event = "BufReadPre",
+    opts = {},
+  },
+
   -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
