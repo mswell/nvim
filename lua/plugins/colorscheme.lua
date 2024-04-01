@@ -1,39 +1,37 @@
 return {
-  {
-    "sainnhe/sonokai",
-    priority = 1000,
-    config = function()
-      vim.g.sonokai_transparent_background = "1"
-      vim.g.sonokai_enable_italic = "1"
-      vim.g.sonokai_style = "shusia"
-    end,
-  },
-  {
-
-    "folke/tokyonight.nvim",
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
-  },
-  {
-    "bluz71/vim-moonfly-colors",
-    name = "moonfly",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.moonflyTransparent = true
-      vim.g.moonflyItalics = true
-    end,
-  },
 
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "sonokai",
-    },
+    "catppuccin/nvim",
+    config = function()
+      require("catppuccin").setup({
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          harpoon = true,
+          illuminate = true,
+          indent_blankline = {
+            enabled = false,
+            scope_color = "sapphire",
+            colored_indent_levels = false,
+          },
+          mason = true,
+          native_lsp = { enabled = true },
+          notify = true,
+          nvimtree = true,
+          neotree = true,
+          symbols_outline = true,
+          telescope = true,
+          treesitter = true,
+          treesitter_context = true,
+        },
+      })
+
+      vim.cmd.colorscheme("catppuccin-macchiato")
+
+      -- Hide all semantic highlights until upstream issues are resolved (https://github.com/catppuccin/nvim/issues/480)
+      for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        vim.api.nvim_set_hl(0, group, {})
+      end
+    end,
   },
 }
