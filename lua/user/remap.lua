@@ -1,33 +1,23 @@
-local opts = { noremap = true, silent = true }
+vim.g.mapleader = " "
 
--- NAVIGATION
-vim.keymap.set("n", "<C-d>", "<C-d>zz") -- move down half page + cursor position fixed
-vim.keymap.set("n", "<C-u>", "<C-u>zz") -- move up half page + cursor position fixed
-vim.keymap.set({ "n", "v" }, "<A-j>", "9j", opts) -- move down 9 lines
-vim.keymap.set({ "n", "v" }, "<A-k>", "9k", opts) -- move up 9 lines
-vim.keymap.set({ "n", "v" }, "<A-h>", "9h", opts) -- move down 9 lines
-vim.keymap.set({ "n", "v" }, "<A-l>", "9l", opts) -- move up 9 lines
+local keymap = vim.keymap -- for conciseness
 
--- MODIFY
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move selected code in v (down)
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- move selected code in v (up)
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
-vim.keymap.set("v", "<C-/>", "gc") -- comment selected text
+keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
--- ACTIONS
-vim.keymap.set("n", "<leader>a", "ggVG") -- select all text in file
-vim.keymap.set("n", "s", ":w<CR>") -- save file
-vim.keymap.set({ "i", "v" }, "C-c", "<esc>", opts) -- esc
-vim.keymap.set({ "n", "v" }, "<A-w>", ":q<CR>", opts) -- quit
-vim.keymap.set("n", "<A-q>", ":q!<CR>", opts) -- quit all
-vim.keymap.set("n", "<leader>e", ":Ex<CR>", opts) -- open netrw
+-- increment/decrement numbers
+keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
+keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
-vim.keymap.set("n", "<leader>u", ":Lazy update<CR>", opts) -- lazy update
--- replace word cursor is on (prime)
-vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- window management
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
--- LSP
-vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, {})
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {})
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
