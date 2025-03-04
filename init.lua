@@ -16,20 +16,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Import color theme based on environment variable NVIM_THEME
-local default_color_scheme = 'catppuccin'
-local env_var_nvim_theme = os.getenv 'NVIM_THEME' or default_color_scheme
-
--- Define a table of theme modules
-local themes = {
-  catppuccin = 'plugins.themes.catppuccin',
-  nord = 'plugins.themes.nord',
-  onedark = 'plugins.themes.onedark',
-}
-
 -- Setup plugins
 require('lazy').setup({
-  require(themes[env_var_nvim_theme]),
+  require 'plugins.themes.tokyonight',
   require 'plugins.telescope',
   require 'plugins.treesitter',
   require 'plugins.lsp',
@@ -51,6 +40,19 @@ require('lazy').setup({
   -- require 'plugins.chatgpt',
   require 'plugins.aerial',
   require 'plugins.vim-tmux-navigator',
+  require 'plugins.bigfile',
+  {                  -- You can easily change to a different colorscheme.
+    'folke/tokyonight.nvim',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require('tokyonight').setup {
+        transparent = true,
+      }
+
+      vim.cmd.colorscheme 'tokyonight-night'
+    end,
+  },
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
