@@ -11,8 +11,18 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Allow moving the cursor through wrapped lines with j, k
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set(
+  'n',
+  'k',
+  "v:count == 0 ? 'gk' : 'k'",
+  { expr = true, silent = true }
+)
+vim.keymap.set(
+  'n',
+  'j',
+  "v:count == 0 ? 'gj' : 'j'",
+  { expr = true, silent = true }
+)
 
 -- clear highlights
 vim.keymap.set('n', '<Esc>', ':noh<CR>', opts)
@@ -36,12 +46,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
 -- Find and center
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
-
--- Resize with arrows
-vim.keymap.set('n', '<Up>', ':resize -2<CR>', opts)
-vim.keymap.set('n', '<Down>', ':resize +2<CR>', opts)
-vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
-vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 
 -- Buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
@@ -110,11 +114,41 @@ vim.keymap.set('n', '<leader>do', function()
 end)
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set(
+  'n',
+  '[d',
+  vim.diagnostic.goto_prev,
+  { desc = 'Go to previous diagnostic message' }
+)
+vim.keymap.set(
+  'n',
+  ']d',
+  vim.diagnostic.goto_next,
+  { desc = 'Go to next diagnostic message' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>d',
+  vim.diagnostic.open_float,
+  { desc = 'Open floating diagnostic message' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>q',
+  vim.diagnostic.setloclist,
+  { desc = 'Open diagnostics list' }
+)
 
 -- Save and load session
-vim.keymap.set('n', '<leader>ss', ':mksession! .session.vim<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>sl', ':source .session.vim<CR>', { noremap = true, silent = false })
+vim.keymap.set(
+  'n',
+  '<leader>ss',
+  ':mksession! .session.vim<CR>',
+  { noremap = true, silent = false }
+)
+vim.keymap.set(
+  'n',
+  '<leader>sl',
+  ':source .session.vim<CR>',
+  { noremap = true, silent = false }
+)
