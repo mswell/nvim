@@ -28,8 +28,7 @@ require('lazy').setup({
   require 'plugins.bufferline',
   require 'plugins.neo-tree',
   require 'plugins.alpha',
-  require 'plugins.indent-blankline',
-  require 'plugins.lazygit',
+  
   require 'plugins.comment',
   require 'plugins.debug',
   require 'plugins.gitsigns',
