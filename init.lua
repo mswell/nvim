@@ -41,6 +41,7 @@ require('lazy').setup({
   require 'plugins.vim-tmux-navigator',
   require 'plugins.copilot',
   require 'plugins.snacks',
+  require 'plugins.noice',
 
   { -- You can easily change to a different colorscheme.
     'folke/tokyonight.nvim',
