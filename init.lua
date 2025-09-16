@@ -1,5 +1,5 @@
-require 'core.options'  -- Load general options
-require 'core.keymaps'  -- Load general keymaps
+require 'core.options' -- Load general options
+require 'core.keymaps' -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 
 -- Install package manager
@@ -40,10 +40,10 @@ require('lazy').setup({
   -- require 'plugins.chatgpt',
   require 'plugins.aerial',
   require 'plugins.vim-tmux-navigator',
-  require 'plugins.bigfile',
   require 'plugins.copilot',
+  require 'plugins.snacks',
 
-  {                  -- You can easily change to a different colorscheme.
+  { -- You can easily change to a different colorscheme.
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
