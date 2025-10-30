@@ -50,7 +50,8 @@ return {
   },
   {
     -- high-performance color highlighter
-    'norcalli/nvim-colorizer.lua',
+    'NvChad/nvim-colorizer.lua',
+    event = 'BufReadPre',
     config = function()
       require('colorizer').setup()
     end,
