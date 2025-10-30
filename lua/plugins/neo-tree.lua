@@ -315,5 +315,19 @@ return {
     }
 
     vim.cmd [[nnoremap \ :Neotree reveal<cr>]]
+
+    -- Auto-load Neo-tree when opening a directory (nvim .)
+    vim.api.nvim_create_autocmd('VimEnter', {
+      callback = function()
+        local arg = vim.fn.argv(0)
+        if arg and vim.fn.isdirectory(arg) == 1 then
+          -- Force load neo-tree immediately
+          require('lazy').load({ plugins = { 'neo-tree.nvim' } })
+          vim.schedule(function()
+            require('neo-tree.command').execute({ action = 'show', dir = arg })
+          end)
+        end
+      end,
+    })
   end,
 }
