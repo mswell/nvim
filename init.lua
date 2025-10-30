@@ -40,6 +40,7 @@ require('lazy').setup({
   require 'plugins.aerial',
   require 'plugins.vim-tmux-navigator',
   require 'plugins.copilot',
+  require 'plugins.opencode',
   require 'plugins.snacks',
   require 'plugins.noice',
 
