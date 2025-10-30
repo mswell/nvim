@@ -15,6 +15,7 @@ return {
     event = 'VeryLazy',
     opts = {
       spec = {
+        { '<leader>a', group = 'ai/opencode', icon = '󰧑' },
         { '<leader>b', group = 'buffer', icon = '' },
         { '<leader>c', group = 'code', icon = '' },
         { '<leader>d', group = 'diagnostics/debug', icon = '' },

@@ -144,6 +144,29 @@
 | `<A-j>` | Move Line Down | v |
 | `<A-k>` | Move Line Up | v |
 
+## AI Assistant (OpenCode)
+
+| Tecla | Descrição | Modo |
+|-------|-----------|------|
+| `<leader>aa` | Ask OpenCode | n, x |
+| `<leader>ax` | OpenCode Actions | n, x |
+| `<leader>ap` | Prompt OpenCode | n, x |
+| `<leader>at` | Toggle OpenCode | n |
+| `<leader>ae` | Explain Code | n, x |
+| `<leader>ao` | Optimize Code | n, x |
+| `<leader>ad` | Document Code | n, x |
+| `<leader>aT` | Generate Tests | n, x |
+| `<leader>ar` | Review Code | n, x |
+| `<leader>aD` | Explain Diagnostics | n |
+| `<leader>af` | Fix Diagnostics | n |
+| `<leader>ag` | Review Git Diff | n |
+| `<leader>an` | New Session | n |
+| `<leader>as` | Share Session | n |
+| `<leader>ai` | Interrupt Session | n |
+| `<leader>ac` | Compact Session | n |
+| `<leader>au` | Scroll Up | n |
+| `<leader>aj` | Scroll Down | n |
+
 ## Harpoon (Quick File Navigation)
 
 | Tecla | Descrição | Modo |
@@ -213,6 +236,7 @@
 
 Quando você pressiona `<leader>` (Space), o which-key mostra os seguintes grupos organizados:
 
+- **`<leader>a`** - ai/opencode
 - **`<leader>b`** - buffer
 - **`<leader>c`** - code  
 - **`<leader>d`** - diagnostics/debug
@@ -234,11 +258,13 @@ Quando você pressiona `<leader>` (Space), o which-key mostra os seguintes grupo
 ## Dicas
 
 1. **Descoberta de keymaps**: Pressione `<Space>` e aguarde - o which-key mostrará todas as opções disponíveis
-2. **Navegação em splits**: Use `<C-h/j/k/l>` para navegar rapidamente entre janelas
-3. **Telescope**: Após abrir qualquer picker do Telescope, use `<C-j/k>` para navegar, `<C-l>` para abrir
-4. **LSP**: Posicione o cursor sobre um símbolo e pressione `K` para ver documentação
-5. **Harpoon**: Marque seus arquivos mais usados com `<leader>m` e acesse rapidamente com `<leader>1-4`
-6. **Git**: Use `<leader>g` + uma letra para acessar rapidamente funções git via Telescope
+2. **OpenCode**: Use `<leader>a` para acessar o assistente AI - pode explicar, otimizar, documentar e revisar código
+3. **Navegação em splits**: Use `<C-h/j/k/l>` para navegar rapidamente entre janelas
+4. **Telescope**: Após abrir qualquer picker do Telescope, use `<C-j/k>` para navegar, `<C-l>` para abrir
+5. **LSP**: Posicione o cursor sobre um símbolo e pressione `K` para ver documentação
+6. **Harpoon**: Marque seus arquivos mais usados com `<leader>m` e acesse rapidamente com `<leader>1-4`
+7. **Git**: Use `<leader>g` + uma letra para acessar rapidamente funções git via Telescope
+8. **AI Actions**: Selecione código em visual mode e use `<leader>ax` para ver todas as ações disponíveis do OpenCode
 
 ---
 
