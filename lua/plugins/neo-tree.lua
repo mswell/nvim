@@ -26,9 +26,9 @@ return {
         }
       end,
       keys = {
-        { '<leader>w', ':Neotree toggle float<CR>', silent = true, desc = 'Float File Explorer' },
-        { '<leader>e', ':Neotree toggle position=left<CR>', silent = true, desc = 'Left File Explorer' },
-        { '<leader>ngs', ':Neotree float git_status<CR>', silent = true, desc = 'Neotree Open Git Status Window' },
+        { '<leader>w', ':Neotree toggle float<CR>', silent = true, desc = 'Explorer (Float)' },
+        { '<leader>e', ':Neotree toggle position=left<CR>', silent = true, desc = 'Explorer (Left)' },
+        { '<leader>ngs', ':Neotree float git_status<CR>', silent = true, desc = 'Git Status (Neotree)' },
       },
     },
   },

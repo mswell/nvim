@@ -8,23 +8,29 @@ return {
     -- detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
   },
-  
+
   {
     -- Hints keybinds
     'folke/which-key.nvim',
+    event = 'VeryLazy',
     opts = {
-      -- win = {
-      --   border = {
-      --     { '┌', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '┐', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --     { '┘', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '└', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --   },
-      -- },
+      spec = {
+        { '<leader>b', group = 'buffer', icon = '' },
+        { '<leader>c', group = 'code', icon = '' },
+        { '<leader>d', group = 'diagnostics/debug', icon = '' },
+        { '<leader>f', group = 'find/file', icon = '' },
+        { '<leader>g', group = 'git', icon = '' },
+        { '<leader>l', group = 'lsp', icon = '' },
+        { '<leader>n', group = 'neotree', icon = '' },
+        { '<leader>o', group = 'outline/aerial', icon = '' },
+        { '<leader>s', group = 'search', icon = '' },
+        { '<leader>t', group = 'tab', icon = '' },
+        { '<leader>w', group = 'window/workspace', icon = '' },
+        { '<leader>x', group = 'close', icon = '' },
+        { 'g', group = 'goto', icon = '' },
+        { '[', group = 'prev', icon = '' },
+        { ']', group = 'next', icon = '' },
+      },
     },
   },
   {
