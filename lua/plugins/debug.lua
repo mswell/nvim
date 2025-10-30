@@ -11,7 +11,10 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
-    'mfussenegger/nvim-dap-python',
+    {
+      'mfussenegger/nvim-dap-python',
+      build = false, -- Disable luarocks build to prevent infinite loop
+    },
   },
   config = function()
     local dap = require 'dap'
@@ -77,6 +80,18 @@ return {
 
     -- Install golang specific config
     -- require('dap-go').setup()
-    require('dap-python').setup()
+    
+    -- Setup Python debugging (using debugpy from mason)
+    local ok, dap_python = pcall(require, 'dap-python')
+    if ok then
+      -- Try to find debugpy installed by Mason
+      local debugpy_path = vim.fn.stdpath 'data' .. '/mason/packages/debugpy/venv/bin/python'
+      if vim.fn.filereadable(debugpy_path) == 1 then
+        dap_python.setup(debugpy_path)
+      else
+        -- Fallback to system python3
+        dap_python.setup('python3')
+      end
+    end
   end,
 }
