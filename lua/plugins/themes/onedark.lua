@@ -15,7 +15,15 @@ return {
 
       -- toggle theme style ---
       toggle_style_key = '<leader>th', -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-      toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
+      toggle_style_list = {
+        'dark',
+        'darker',
+        'cool',
+        'deep',
+        'warm',
+        'warmer',
+        'light',
+      }, -- List of styles to toggle between
 
       -- Change code style ---
       -- Options are italic, bold, underline, none
@@ -35,7 +43,8 @@ return {
 
       -- Custom Highlights --
       colors = {
-        -- purple = '#56b6c2',
+        fg = '#979eab',
+        bg0 = '#282c34',
       }, -- Override default colors
       highlights = {}, -- Override highlight groups
 
@@ -68,7 +77,12 @@ return {
       set_diagnostics_bg_transparency()
     end
 
-    vim.keymap.set('n', '<leader>bg', toggle_transparency, { noremap = true, silent = true })
+    vim.keymap.set(
+      'n',
+      '<leader>bg',
+      toggle_transparency,
+      { noremap = true, silent = true }
+    )
   end,
 }
 
