@@ -18,7 +18,7 @@ return {
     },
     messages = {
       enabled = true,
-      view = "popup",
+      view = 'mini',
       opts = {
         position = {
           row = "50%",

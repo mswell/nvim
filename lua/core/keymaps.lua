@@ -79,6 +79,9 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Indent Right' })
 -- Move text up and down
 vim.keymap.set('v', '<A-j>', ':m .+1<CR>==', { desc = 'Move Line Down' })
 vim.keymap.set('v', '<A-k>', ':m .-2<CR>==', { desc = 'Move Line Up' })
+-- Move line up and down (Normal mode - like VSCode)
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move Line Down' })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move Line Up' })
 
 -- Keep last yanked when pasting
 vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste Without Yank' })
