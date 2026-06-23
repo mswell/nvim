@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup plugins
 require('lazy').setup({
-  require 'plugins.themes.gruvbox',
+  require 'plugins.themes.tokyonight',
   require 'plugins.telescope',
   require 'plugins.treesitter',
   require 'plugins.lsp',
